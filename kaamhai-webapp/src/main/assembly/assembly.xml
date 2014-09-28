@@ -1,0 +1,23 @@
+<assembly>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <formats>
+        <format>war</format>
+    </formats>
+    <dependencySets>
+
+        <dependencySet>
+            <outputFileNameMapping>${artifact.artifactId}${dashClassifier?}.${artifact.extension}</outputFileNameMapping>
+            <useTransitiveDependencies>false</useTransitiveDependencies>
+            <outputDirectory>WEB-INF/lib</outputDirectory>
+        </dependencySet>
+    </dependencySets>
+    <fileSets>
+        <fileSet>
+            <directory>${basedir}/src/main/webapp</directory>
+            <outputDirectory></outputDirectory>
+            <includes>
+                <include>**</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>

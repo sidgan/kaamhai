@@ -1,0 +1,29 @@
+# Eclipse
+.classpath
+.project
+.settings/
+.metadata/
+.metadata
+bin/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+*.log
+log/
+*/target/**
+test-classes/*
+
+*.log.lck
+
+p4.ini
+*.log
+target/
+surefire-reports/
+

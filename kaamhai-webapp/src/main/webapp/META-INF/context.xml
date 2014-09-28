@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" docBase="mumble-webapp" path="/webapps/mumble-webapp" cookies="true" crossContext="true">
+<!-- The contents of this file will be loaded for each web application -->
+</Context>

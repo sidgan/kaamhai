@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+o-o
+|
+o CONFIDENTIAL - Copyright 2007 Intuit Inc. This material contains certain
+| trade secrets and confidential and proprietary information of Intuit Inc.
+o Use, reproduction, disclosure and distribution by any means are prohibited,
+| except pursuant to a written license from Intuit Inc. Use of copyright
+o notice is precautionary and does not imply publication or disclosure.
+|
+o-o
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <packaging>pom</packaging>
+
+  <artifactId>kaamhai-tool</artifactId>
+  <groupId>org.kaamhai</groupId>
+  <version>1.0.0-SNAPSHOT</version>
+  <name>${project.version} - ${project.artifactId}</name>
+
+  <description>kaam hai!</description>
+
+
+    <properties>
+	<slf4j.version>1.7.7</slf4j.version>
+	<logback.version>1.0.13</logback.version>
+	<resteasy.version>3.0.6.Final</resteasy.version>
+	<tomcat.version>7.0.39</tomcat.version>
+	<elasticsearch.version>1.2.1</elasticsearch.version>
+	<jackson2.version>2.3.2</jackson2.version>
+	<jest.version>0.1.1</jest.version>
+	<scala-version>2.10.0</scala-version>
+	<json4s-version>3.2.4</json4s-version>
+	<json.schema.validator.version>2.2.5</json.schema.validator.version>
+	<swagger.version>1.3.2</swagger.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jmockit.version>1.9</jmockit.version>
+  </properties>
+
+
+  <modules>
+    <module>kaamhai-core</module>
+    <module>kaamhai-webapp</module>
+  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+
+      <dependency>
+        <groupId>org.kaamhai</groupId>
+        <artifactId>kaamhai-core</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+       <dependency>
+        <groupId>org.kaamhai</groupId>
+        <artifactId>kaamhai-webapp</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+	    <groupId>org.jmockit</groupId>
+	    <artifactId>jmockit</artifactId>
+	    <version>${jmockit.version}</version>
+	</dependency>
+      <dependency>
+        <groupId>org.elasticsearch</groupId>
+        <artifactId>elasticsearch</artifactId>
+        <version>${elasticsearch.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.searchbox</groupId>
+        <artifactId>jest</artifactId>
+        <version>${jest.version}</version>
+      </dependency>
+       <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>3.0</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-configuration</groupId>
+        <artifactId>commons-configuration</artifactId>
+        <version>1.8</version>
+    </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.jaxrs</groupId>
+        <artifactId>jackson-jaxrs-json-provider</artifactId>
+        <version>${jackson2.version}</version>
+      </dependency>
+       <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-annotations</artifactId>
+        <version>${jackson2.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>${jackson2.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${jackson2.version}</version>
+      </dependency>
+        <dependency>
+		<groupId>org.jboss.resteasy</groupId>
+		<artifactId>resteasy-jaxrs</artifactId>
+		<version>${resteasy.version}</version>
+	  </dependency>
+	  <dependency>
+		<groupId>org.jboss.resteasy</groupId>
+		<artifactId>resteasy-jaxb-provider</artifactId>
+		<version>${resteasy.version}</version>
+	  </dependency>
+	  <dependency>
+	   <groupId>org.jboss.resteasy</groupId>
+    	<artifactId>resteasy-jackson-provider</artifactId>
+	   <version>${resteasy.version}</version>
+	  </dependency>
+	  <dependency>
+    	<groupId>com.wordnik</groupId>
+	    <artifactId>swagger-jaxrs_2.10</artifactId>
+    	<version>${swagger.version}</version>
+	  </dependency>
+       <dependency>
+ 	    <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+  	    <version>${logback.version}</version>
+	  </dependency>
+      <dependency>
+  	    <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>${slf4j.version}</version>
+     </dependency>
+      <dependency>
+        <groupId>org.apache.tomcat</groupId>
+        <artifactId>tomcat-servlet-api</artifactId>
+        <version>${tomcat.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.json</groupId>
+        <artifactId>json</artifactId>
+        <version>1.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.7</version>
+        <scope>test</scope>
+      </dependency>
+       <dependency>
+	  <groupId>org.jmockit</groupId>
+	  <artifactId>jmockit</artifactId>
+	  <version>${jmockit.version}</version>
+	</dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+	  <groupId>org.apache.maven.plugins</groupId>
+	  <artifactId>maven-compiler-plugin</artifactId>
+	  <version>3.1</version>
+          <configuration>
+            <source>1.7</source>
+            <target>1.7</target>
+          </configuration>
+        </plugin>
+        <plugin>
+	  <groupId>org.apache.maven.plugins</groupId>
+	  <artifactId>maven-resources-plugin</artifactId>
+	  <version>2.6</version>
+        </plugin>
+        <plugin>
+	  <groupId>org.apache.maven.plugins</groupId>
+	  <artifactId>maven-jar-plugin</artifactId>
+          <version>2.4</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+</project>

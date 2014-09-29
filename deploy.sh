@@ -1,7 +1,7 @@
 #!/bin/sh
 
-#echo 'building'
-#mvn clean install
+echo 'building'
+mvn clean install
 
 
 echo 'deploying war in tomcat'

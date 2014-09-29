@@ -9,4 +9,4 @@ Hold on till then. Swagger serves as both documentation as well as API playgroun
 
 The next thing to do is to host these services.
 Trying to identify a server to host it publicly so all of you can access.
-I know of a way to do it with Intuit's resources, will keep you posted.
+Will keep you posted.

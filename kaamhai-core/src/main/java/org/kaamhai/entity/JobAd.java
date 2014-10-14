@@ -102,6 +102,13 @@ public class JobAd {
 	String description;
 	String availability;
 	String category;
+	String gender;
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
 	Double expectedPay;
 	Integer rating;
 	List<Reference> references;

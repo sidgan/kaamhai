@@ -26,7 +26,7 @@ public class ESClient {
 	 * @throws Exception
 	 */
 	public static JestClient getInstance() throws Exception{
-		if(_factory == null){
+		if(client == null){
 			init();
 		}
 		return client;
@@ -41,8 +41,8 @@ public class ESClient {
 	 */
 	static private void init() throws Exception {
 		try {
-			HttpClientConfig clientConfig = new HttpClientConfig.Builder("http://localhost:9200").multiThreaded(true).discoveryEnabled(true).
-					 discoveryFrequency(1L, TimeUnit.MINUTES)
+			HttpClientConfig clientConfig = new HttpClientConfig.Builder("htpp://172.16.122.85:9200").multiThreaded(true).discoveryEnabled(true).
+					 discoveryFrequency(1L, TimeUnit.SECONDS)
 					 .connTimeout(60000).readTimeout(200000)
 					 .build();
 			logger.info( "Connection timeout:{}" ,clientConfig.getConnTimeout());
@@ -52,9 +52,10 @@ public class ESClient {
 			_factory.setHttpClientConfig(clientConfig);
 			client = _factory.getObject();
 		} catch (Exception e) {
-			logger.error( "Error Iniatilizing Elastic Search ", e);
+			logger.error( "Error Initializing Elastic Search ", e);
 			throw new Exception(e);
 		}
 	}
+
 	
 }

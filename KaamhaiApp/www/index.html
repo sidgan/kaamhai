@@ -27,41 +27,154 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Pacifico" />
+        <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
+        <link type="text/css" rel="stylesheet" href="css/demo.css" />
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/jquery.mmenu.min.all.js"></script>
+        <script type="text/javascript">
+          $(function() {
+            $('nav#menu').mmenu();
+          });
+       </script>
+        
     </head>
-    <body class="gwd-div-qn1y">
+    <body>
 
-            
-                <div class="gwd-div-0lka">
-                  <div class="gwd-div-n1t0"><span class="gwd-span-1u9h">Kaam Hai ?</span>
-
-                  </div>
-                </div>
-                <div class="gwd-div-8ld7">
+             <div class="header">
+        <a href="#menu"></a>
+           <div class="gwd-div-8ld7">
+                <a href="#menu"></a>
                 <div class="gwd-div-zvar">
-                  <div class="gwd-div-myiw"><span class="gwd-span-9cv5">Login</span>
+                  <div class="gwd-div-myiw"><span class="gwd-span-9cv5"><button>Login</button></span>
 
                   </div>
                 </div>
                 <div class="gwd-div-nz2j">
-                  <div class="gwd-div-r9cd"><span class="gwd-span-yb8v">Refer</span>
+                  <div class="gwd-div-r9cd"><span class="gwd-span-yb8v"><button onclick="displayForm()">Refer</button></span>
+                  </div>
+                </div>
+                </div> <div class="gwd-div-8ld7">
+                <a href="#menu"></a>
+                <div class="gwd-div-zvar">
+                  <div class="gwd-div-myiw"><span class="gwd-span-9cv5"><button>Login</button></span>
+
+                  </div>
+                </div>
+                <div class="gwd-div-nz2j">
+                  <div class="gwd-div-r9cd"><span class="gwd-span-yb8v"><button onclick="displayForm()">Refer</button></span>
                   </div>
                 </div>
                 </div>
-                <div class ="cityLabel">City:
-                </div>
-                <select class="city">
-                          <option value="select">Select</option>                   
-                          <option value="Mumbai">Mumbai</option>
-                          <option value="Delhi">Delhi</option>
-                          <option value="Bangalore">Bangalore</option>
-                          <option value="Kolkata">Kolkata</option>
-                </select>
-                <button type="submit"><img  class="search-img" src="img/search.png"/></button>
+      </div>
+                
+               
+                 <div id="main-pop-up">
+                <div class="gwd-div-0lka">
+                   
+                    <div class="gwd-div-n1t0"><span class="gwd-span-1u9h">Kaam Hai ?</span>
 
+                    </div>
+                    </div>
+                    <div class ="cityLabel">City:
+                    </div>
+                    <select class="city">
+                              <option value="select">Select</option>                   
+                              <option value="Mumbai">Mumbai</option>
+                              <option value="Delhi">Delhi</option>
+                              <option value="Bangalore">Bangalore</option>
+                              <option value="Kolkata">Kolkata</option>
+                    </select>
+                 
+
+                    <button onclick="submit()"><img  class="search-img" src="img/search.png"/></button>
+                </div>
+                <nav id="menu">
+                </nav>
+                <div id="search-result">
+                </div>
+                <div id="pop-up-box">
+                  <div id="inner-text">
+                    <div> Would like to continue Refering ! </div>
+                    <button onclick="yesToRefer()">Yes!</button>
+                    <button onclick="noToRefer()">No</button>
+                  </div>
+                </div>
+                <div id="form">
+                  <div>Earn Karma, Refer Someone!!</div>
+                  <div id="left">
+                     <div>  
+                      <label>Name:</label>
+                      <input type="text"/>
+                    </div>
+                    <div>
+                      <label>Age:</label>
+                      <input type="text"/>
+                    </div>
+                    <div>
+                      <label>Location:</label>
+                      <input type="text"/>
+                    </div>
+                    <div>
+                      <label>City:</label>
+                      <select id="city">
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Delhi">Delhi</option>
+                      </select>
+                    <div>
+                    <div>
+                      <label>Language:</label>
+                      <input type="text"/>
+                    </div>
+                    <div>
+                      <label>Contact Number:</label>
+                      <input type="text"/>
+                    </div>
+                  </div>
+
+                  <div id="right">
+                    <div>
+                      <label>Experience:</label>
+                      <input type="number"/>
+                    </div>
+                    <div>
+                      <label>Description:</label>
+                      <input type="textarea"/>
+                    </div>
+                    <div>
+                      <label>Availability:</label>
+                      <input type="text"/>
+                    </div>
+                    <div>
+                      <label>Category:</label>
+                      <input type="text"/>
+                    </div>
+                    <div>
+                      <label>Gender:</label>
+                      <select id="gender">
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label>Salary Expectation</label>
+                      <input type="text"/>
+                    </div>
+                  </div>
+                  <button onclick="referralSubmission()">1+ Karma</button>
+                </div>
+                <a href="#popupBasic" data-rel="popup">Open Popup</a>
+
+                <div data-role="popup" id="popupBasic">
+                  <p>This is a completely basic popup, no options set.<p>
+                </div>
+                
 
         
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>

@@ -47,3 +47,31 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+function submit(){
+
+    $.get( "http://pppdc9prd48r.corp.intuit.net:8080/kaamhai/jobAds?city=Bangalore&location=whitefield&category=maid", function( data ) {
+        alert(data);
+});
+}
+
+function displayForm(){
+    console.log("display");
+    $("#main-pop-up").hide();
+    $("#form").show();
+}
+
+function referralSubmission(){
+
+    $("#pop-up-box").show();
+}
+
+function yesToRefer(){
+    $("#pop-up-box").hide();
+}
+function noToRefer(){
+    $("#form").hide();
+    $("#pop-up-box").hide();
+    $("#search-result").show();
+
+}

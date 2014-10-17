@@ -147,8 +147,8 @@ h1 {
       font-family: fantasy;
       text-align: left;
       color: rgb(0, 0, 0);
-      left: 343px;
-      top: 181px;
+      left: 30%;
+      top: 40%;
     }
     .gwd-span-lipw {
       color: rgb(30, 40, 97);
@@ -175,8 +175,8 @@ h1 {
       position: absolute;
       width: 122px;
       height: 30px;
-      left: 709px;
-      top: 14px;
+      left: 40%;
+      top: 0%;
       font-family:'Times New Roman';
       text-align: left;
       color: rgb(0, 0, 0);
@@ -202,7 +202,7 @@ h1 {
     }
     .gwd-span-9cv5 {
       font-size: 18px;
-      color: rgb(20, 14, 84);
+      color: rgb(242, 235, 235);
     }
     .gwd-div-y9r8 {
       position: absolute;
@@ -216,8 +216,8 @@ h1 {
       position: absolute;
       width: 111px;
       height: 31px;
-      left: 851px;
-      top: 14px;
+      left: 60%;
+      top: 0%;
       font-family:'Times New Roman';
       text-align: left;
       color: rgb(0, 0, 0);
@@ -229,6 +229,73 @@ h1 {
       text-align: center;
     }
     .gwd-span-yb8v {
-      color: rgb(40, 39, 95);
+      color: rgb(242, 235, 235);
       font-size: 18px;
     }
+
+  body .city{
+    position: absolute;
+    top: 55%;
+    left: 25%;
+    width: 40%;
+  }
+
+  body .cityLabel{
+    position: absolute;
+    top: 55%;
+    left: 15%;
+    width: 50%;
+    font-size: 17px;
+    font-weight: 700;
+    color: rgb(30, 40, 97);
+  }
+
+  body .search-img{
+    height: 25px;
+    position: absolute;
+    top: 55%;
+    left: 68%;
+    
+  }
+
+  body div#left{
+    position: relative;
+    left:5%;
+  }
+
+   body div#right: {
+    position: relative;
+    right:5%;
+  }
+
+  body input{
+    position: relative;
+    left:0%;
+  }
+
+  body div#form{
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    display: none;
+  }
+
+  body div#pop-up-box{
+    position: absolute;
+  top: 50%;
+  left: 35%;
+  background-color: rgb(168, 168, 186);
+  text-align: center;
+  width: 25%;
+  height: 30%;
+  border-radius: 20px;
+  display: none;
+
+  }
+
+  body div#inner-text{
+
+    position: relative;
+    top: 30%;
+  }
+

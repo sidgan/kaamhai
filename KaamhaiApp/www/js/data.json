@@ -1,0 +1,63 @@
+[
+ {
+       
+        "name": "Kamala",
+        "age": "45",
+        "location": "Whitefield",
+        "city": "Bangalore",
+        "language": "Kannada",
+        "contactInfo": "9000012345",
+        "experience": "10",
+        "description": "She is very dedicated, comes on time and finishes fast. Very neat and clean. She is available for 1 hour everyday from 10-11 am and needs extra income.",
+        "availability": "10 -11 am, daily",
+        "category": "maid",
+        "gender": "female",
+        "rate":"5"
+    },
+     {
+      
+        "name": "Raj",
+        "age": "50",
+        "location": "Whitefield",
+        "city": "Bangalore",
+        "language": "Kannada",
+        "contactInfo": "9000012345",
+        "experience": "10",
+        "description": "She is very dedicated, comes on time and finishes fast. Very neat and clean. She is available for 1 hour everyday from 10-11 am and needs extra income.",
+        "availability": "10 -11 am, daily",
+        "category": "maid",
+        "gender": "female",
+        "rate":"4"
+    },
+     {
+       
+        "name": "Kamala",
+        "age": "45",
+        "location": "Whitefield",
+        "city": "Bangalore",
+        "language": "Kannada",
+        "contactInfo": "9000012345",
+        "experience": "10",
+        "description": "She is very dedicated, comes on time and finishes fast. Very neat and clean. She is available for 1 hour everyday from 10-11 am and needs extra income.",
+        "availability": "10 -11 am, daily",
+        "category": "maid",
+        "gender": "female",
+        "rate":"3"
+    },
+     {
+       
+        "name": "Kamala",
+        "age": "45",
+        "location": "Whitefield",
+        "city": "Bangalore",
+        "language": "Kannada",
+        "contactInfo": "9000012345",
+        "experience": "10",
+        "description": "She is very dedicated, comes on time and finishes fast. Very neat and clean. She is available for 1 hour everyday from 10-11 am and needs extra income.",
+        "availability": "10 -11 am, daily",
+        "category": "maid",
+        "gender": "female",
+        "rate":"0"
+    }
+
+]

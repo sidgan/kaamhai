@@ -49,21 +49,50 @@ var app = {
 };
 
 function submit(){
+    $("#main-pop-up").hide();
 
+/*
     $.get( "http://pppdc9prd48r.corp.intuit.net:8080/kaamhai/jobAds?city=Bangalore&location=whitefield&category=maid", function( data ) {
         alert(data);
+});*/
+  $.get( "js/data.json", function( data ) {
+         var i = 1; 
+           alert("clicked");
+    $.each( data, function( key, value ) {
+ 
+      $("<div class='EmpList' id='Empid"+i+"'></div>").appendTo("div#search-result");
+      console.log("Emplist first"+i);
+
+      $.each(value, function(key,value){
+
+       var divId="div#Empid"+i;
+        $("<div></div>").html(key+' : '+value).appendTo(divId);
+
+
+      });
+      console.log(value);
+       var divId="div#Empid"+i;
+       $("<div></div>").raty({ readOnly: true, score: value.rate }).appendTo(divId);
+   
+ 
+    i=i+1;
+    console.log("sec"+i);
+});
+  
 });
 }
 
 function displayForm(){
     console.log("display");
     $("#main-pop-up").hide();
+    $("#search-result").hide();
     $("#form").show();
 }
 
 function referralSubmission(){
-
-    $("#pop-up-box").show();
+    
+   // $("#pop-up-box").show();
+   alert("Your submission has been recorded");
 }
 
 function yesToRefer(){

@@ -1,24 +1,5 @@
 <!DOCTYPE html>
-<!--
-    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
 
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
     <head>
         <meta charset="utf-8" />
@@ -30,25 +11,102 @@
         <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Pacifico" />
         <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
         <link type="text/css" rel="stylesheet" href="css/demo.css" />
+        <link type="text/css" rel="stylesheet" href="lib/jquery.raty.css"/>
+        <link type="text/css" rel="stylesheet" href="css/circle.css">
 
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/jquery.mmenu.min.all.js"></script>
+        <script type="text/javascript" src="lib/jquery.raty.js"></script>
+        <script type="text/javascript" src="js/progress-circle.js"></script>
         <script type="text/javascript">
           $(function() {
             $('nav#menu').mmenu();
+             $( '#circle' ).progressCircle({
+                            nPercent        : 50,
+                            showPercentText : true,
+                            thickness       : 3,
+                            circleSize      : 100
+                          });
+                        
           });
        </script>
         
     </head>
     <body>
+      <script>
+
+                          function statusChangeCallback(response) {
+                            console.log('statusChangeCallback');
+                            console.log(response);
+                            if (response.status === 'connected') {
+                              testAPI();
+                            } else if (response.status === 'not_authorized') {
+                              document.getElementById('status').innerHTML = 'Please log ' +
+                                'into this app.';
+                            } else {
+                              document.getElementById('status').innerHTML = 'Please log ' +
+                                'into Facebook.';
+                            }
+                          }
+
+                          function checkLoginState() {
+                            FB.getLoginStatus(function(response) {
+                              statusChangeCallback(response);
+                            });
+                          }
+
+                          window.fbAsyncInit = function() {
+                          FB.init({
+                            appId      : '518182581658668',
+                            cookie     : true,  
+                            xfbml      : true,  
+                            version    : 'v2.1' 
+                          });
+
+                          FB.getLoginStatus(function(response) {
+                            statusChangeCallback(response);
+                          });
+
+                          };
+
+                          (function(d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id)) return;
+                            js = d.createElement(s); js.id = id;
+                            js.src = "//connect.facebook.net/en_US/sdk.js";
+                            fjs.parentNode.insertBefore(js, fjs);
+                          }(document, 'script', 'facebook-jssdk'));
+
+                          function testAPI() {
+                            console.log('Welcome!  Fetching your information.... ');
+                            FB.api('/me', function(response) {
+                              console.log('Successful login for: ' + response.name);
+                              document.getElementById('status').innerHTML =
+                                'Thanks for logging in, ' + response.name + '!';
+                            });
+                          }
+
+
+      </script>
 
              <div class="header">
-        <a href="#menu"></a>
+  
            <div class="gwd-div-8ld7">
-                <a href="#menu"></a>
+                <a href="#menu">
+
+                </a>
+                <div id="search">
+                    <input  type="text" placeholder="Type here">
+                <button onclick="submit()"><img  class="search-icon" src="img/search.png"/></button>
+                </div>    
+              
                 <div class="gwd-div-zvar">
-                  <div class="gwd-div-myiw"><span class="gwd-span-9cv5"><button>Login</button></span>
+                  <div class="gwd-div-myiw"><span class="gwd-span-9cv5"> <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                 </fb:login-button>
+
+                <div id="status">
+                </div></span>
 
                   </div>
                 </div>
@@ -56,21 +114,10 @@
                   <div class="gwd-div-r9cd"><span class="gwd-span-yb8v"><button onclick="displayForm()">Refer</button></span>
                   </div>
                 </div>
-                </div> <div class="gwd-div-8ld7">
-                <a href="#menu"></a>
-                <div class="gwd-div-zvar">
-                  <div class="gwd-div-myiw"><span class="gwd-span-9cv5"><button>Login</button></span>
-
-                  </div>
                 </div>
-                <div class="gwd-div-nz2j">
-                  <div class="gwd-div-r9cd"><span class="gwd-span-yb8v"><button onclick="displayForm()">Refer</button></span>
-                  </div>
-                </div>
-                </div>
-      </div>
+           </div>
                 
-               
+   
                  <div id="main-pop-up">
                 <div class="gwd-div-0lka">
                    
@@ -92,15 +139,24 @@
                     <button onclick="submit()"><img  class="search-img" src="img/search.png"/></button>
                 </div>
                 <nav id="menu">
-                </nav>
+
+                  <img id= "profile-pic" src="img/Profile.jpeg">
+                    <p>Increase your karma points by refering people you are acquainted with. Help out to get rewarded.
+                    </p>
+                    <p class="point">
+                      <span>Karma Points:</span>
+                      <p class="point" id="circle"></p>
+                    </p>
+                  </nav>
+                  
                 <div id="search-result">
                 </div>
-                <div id="pop-up-box">
+                <!--<div id="pop-up-box">
                   <div id="inner-text">
                     <div> Would like to continue Refering ! </div>
                     <button onclick="yesToRefer()">Yes!</button>
                     <button onclick="noToRefer()">No</button>
-                  </div>
+                  </div>-->
                 </div>
                 <div id="form">
                   <div>Earn Karma, Refer Someone!!</div>
@@ -167,11 +223,7 @@
                   </div>
                   <button onclick="referralSubmission()">1+ Karma</button>
                 </div>
-                <a href="#popupBasic" data-rel="popup">Open Popup</a>
-
-                <div data-role="popup" id="popupBasic">
-                  <p>This is a completely basic popup, no options set.<p>
-                </div>
+               
                 
 
         

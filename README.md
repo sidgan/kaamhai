@@ -11,3 +11,15 @@ Hold on till then. Swagger serves as both documentation as well as API playgroun
 2. The next thing to do is to host these services.
 Trying to identify a server to host it publicly so all of you can access.
 Will keep you posted.
+
+KaamHaiApp
+
+The UI part for the project
+
+Built using phonegap
+	- To run cd to www folder and run command
+
+			-For Android
+				phonegap run android 
+			-For Ios
+				phonegap run ios

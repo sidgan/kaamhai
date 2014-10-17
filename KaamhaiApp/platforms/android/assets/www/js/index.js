@@ -91,8 +91,12 @@ function displayForm(){
 
 function referralSubmission(){
     
+<<<<<<< HEAD
    // $("#pop-up-box").show();
    alert("Your submission has been recorded");
+=======
+    $("#pop-up-box").show();
+>>>>>>> FETCH_HEAD
 }
 
 function yesToRefer(){

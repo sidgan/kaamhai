@@ -57,7 +57,11 @@ function submit(){
 });*/
   $.get( "js/data.json", function( data ) {
          var i = 1; 
+<<<<<<< HEAD
 
+=======
+           alert("clicked");
+>>>>>>> FETCH_HEAD
     $.each( data, function( key, value ) {
  
       $("<div class='EmpList' id='Empid"+i+"'></div>").appendTo("div#search-result");
@@ -90,12 +94,17 @@ function displayForm(){
 }
 
 function referralSubmission(){
+<<<<<<< HEAD
     var data ={
 
     }
     $.post("http://pppdc9prd48r.corp.intuit.net:8080/kaamhai/jobAds",data);
    // $("#pop-up-box").show();
    alert("Your submission has been recorded");
+=======
+    
+    $("#pop-up-box").show();
+>>>>>>> FETCH_HEAD
 }
 
 function yesToRefer(){

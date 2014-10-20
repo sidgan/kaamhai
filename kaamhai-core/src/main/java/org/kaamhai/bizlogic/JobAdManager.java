@@ -10,7 +10,7 @@ import javax.ws.rs.core.Response.Status;
 
 import org.apache.http.client.ClientProtocolException;
 import org.kaamhai.dao.IJobAdDAO;
-import org.kaamhai.dao.JobAdDAO;
+import org.kaamhai.dao.JobAdDAOESClient;
 import org.kaamhai.entity.JobAd;
 import org.kaamhai.service.IJobAdService;
 
@@ -23,7 +23,7 @@ public class JobAdManager implements IJobAdService {
 	IJobAdDAO dao;
 
 	public JobAdManager() {
-		dao = new JobAdDAO();
+		dao = new JobAdDAOESClient();
 	}
 
 	public Response getById(String id) throws Exception {
@@ -35,10 +35,10 @@ public class JobAdManager implements IJobAdService {
 		return Response.status(Status.OK).entity(jobAds).build();
 	}
 
-	public Response search(String city, String location, String language,
+	public Response search(String gender, String location, String city, String language,
 			String category) throws ClientProtocolException, IOException,
 			Exception {
-		List<JobAd> jobAds = dao.search(location, city, language, category);
+		List<JobAd> jobAds = dao.search(gender,location, city, language, category);
 		return Response.status(Status.OK).entity(jobAds).build();
 	}
 

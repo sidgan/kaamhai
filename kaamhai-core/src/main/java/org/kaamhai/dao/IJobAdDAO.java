@@ -8,11 +8,11 @@ import org.kaamhai.entity.JobAd;
 
 public interface IJobAdDAO {
 
-	public JobAd getById(String id) throws ClientProtocolException, IOException, Exception;
+	public Object getById(String id) throws ClientProtocolException, IOException, Exception;
 	
 	public List<JobAd> get() throws ClientProtocolException, IOException, Exception;
 	
-	public List<JobAd> search(String location, String city, String language, String category) throws ClientProtocolException, IOException, Exception;
+	public List<JobAd> search(String gender, String location, String city, String language, String category) throws ClientProtocolException, IOException, Exception;
 	
 	public JobAd create(JobAd jobAd) throws ClientProtocolException, IOException, Exception;
 	

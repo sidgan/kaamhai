@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Pacifico" />
+        <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
+        <link type="text/css" rel="stylesheet" href="css/demo.css" />
+        <link type="text/css" rel="stylesheet" href="lib/jquery.raty.css"/>
+        <link type="text/css" rel="stylesheet" href="css/circle.css">
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/jquery.mmenu.min.all.js"></script>
+        <script type="text/javascript" src="lib/jquery.raty.js"></script>
+        <script type="text/javascript" src="js/progress-circle.js"></script>
+        <script type="text/javascript">
+          $(function() {
+            $('nav#menu').mmenu();
+             $( '#circle' ).progressCircle({
+                            nPercent        : 50,
+                            showPercentText : true,
+                            thickness       : 3,
+                            circleSize      : 100
+                          });
+                        
+          });
+       </script>
+        
+    </head>
+    <body>
+      <script>
+
+                          function statusChangeCallback(response) {
+                            console.log('statusChangeCallback');
+                            console.log(response);
+                            if (response.status === 'connected') {
+                              testAPI();
+                            } else if (response.status === 'not_authorized') {
+                              document.getElementById('status').innerHTML = 'Please log ' +
+                                'into this app.';
+                            } else {
+                              document.getElementById('status').innerHTML = 'Please log ' +
+                                'into Facebook.';
+                            }
+                          }
+
+                          function checkLoginState() {
+                            FB.getLoginStatus(function(response) {
+                              statusChangeCallback(response);
+                            });
+                          }
+
+                          window.fbAsyncInit = function() {
+                          FB.init({
+                            appId      : '518182581658668',
+                            cookie     : true,  
+                            xfbml      : true,  
+                            version    : 'v2.1' 
+                          });
+
+                          FB.getLoginStatus(function(response) {
+                            statusChangeCallback(response);
+                          });
+
+                          };
+
+                          (function(d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id)) return;
+                            js = d.createElement(s); js.id = id;
+                            js.src = "//connect.facebook.net/en_US/sdk.js";
+                            fjs.parentNode.insertBefore(js, fjs);
+                          }(document, 'script', 'facebook-jssdk'));
+
+                          function testAPI() {
+                            console.log('Welcome!  Fetching your information.... ');
+                            FB.api('/me', function(response) {
+                              console.log('Successful login for: ' + response.name);
+                              document.getElementById('status').innerHTML =
+                                'Thanks for logging in, ' + response.name + '!';
+                            });
+                          }
+
+
+      </script>
+
+             <div class="header">
+  
+           <div class="gwd-div-8ld7">
+                <a href="#menu">
+
+                </a>
+                <div id="search">
+                    <input  type="text" placeholder="Type here">
+                <button onclick="submit()"><img  class="search-icon" src="img/search.png"/></button>
+                </div>    
+              
+                <div class="gwd-div-zvar">
+                  <div class="gwd-div-myiw"><span class="gwd-span-9cv5"> <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                 </fb:login-button>
+
+                <div id="status">
+                </div></span>
+
+                  </div>
+                </div>
+                <div class="gwd-div-nz2j">
+                  <div class="gwd-div-r9cd"><span class="gwd-span-yb8v"><button onclick="displayForm()">Refer</button></span>
+                  </div>
+                </div>
+                </div>
+           </div>
+                
+   
+                 <div id="main-pop-up">
+                <div class="gwd-div-0lka">
+                   
+                    <div class="gwd-div-n1t0"><span class="gwd-span-1u9h">Kaam Hai ?</span>
+
+                    </div>
+                    </div>
+                    <div class ="cityLabel">City:
+                    </div>
+                    <select class="city">
+                              <option value="select">Select</option>                   
+                              <option value="Mumbai">Mumbai</option>
+                              <option value="Delhi">Delhi</option>
+                              <option value="Bangalore">Bangalore</option>
+                              <option value="Kolkata">Kolkata</option>
+                    </select>
+                 
+
+                    <button onclick="submit()"><img  class="search-img" src="img/search.png"/></button>
+                </div>
+                <nav id="menu">
+
+                  <img id= "profile-pic" src="img/Profile.jpeg">
+                    <p>Increase your karma points by refering people you are acquainted with. Help out to get rewarded.
+                    </p>
+                    <p class="point">
+                      <span>Karma Points:</span>
+                      <p class="point" id="circle"></p>
+                    </p>
+                  </nav>
+                  
+                <div id="search-result">
+                </div>
+                <!--<div id="pop-up-box">
+                  <div id="inner-text">
+                    <div> Would like to continue Refering ! </div>
+                    <button onclick="yesToRefer()">Yes!</button>
+                    <button onclick="noToRefer()">No</button>
+                  </div>-->
+                </div>
+                <div id="form">
+                  <div>Earn Karma, Refer Someone!!</div>
+                  <div id="left">
+                     <div>  
+                      <label>Name:</label>
+                      <input type="text"/>
+                    </div>
+                    <div>
+                      <label>Age:</label>
+                      <input type="text"/>
+                    </div>
+                    <div>
+                      <label>Location:</label>
+                      <input type="text"/>
+                    </div>
+                    <div>
+                      <label>City:</label>
+                      <select id="city">
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Delhi">Delhi</option>
+                      </select>
+                    <div>
+                    <div>
+                      <label>Language:</label>
+                      <input type="text"/>
+                    </div>
+                    <div>
+                      <label>Contact Number:</label>
+                      <input type="text"/>
+                    </div>
+                  </div>
+
+                  <div id="right">
+                    <div>
+                      <label>Experience:</label>
+                      <input type="number"/>
+                    </div>
+                    <div>
+                      <label>Description:</label>
+                      <input type="textarea"/>
+                    </div>
+                    <div>
+                      <label>Availability:</label>
+                      <input type="text"/>
+                    </div>
+                    <div>
+                      <label>Category:</label>
+                      <input type="text"/>
+                    </div>
+                    <div>
+                      <label>Gender:</label>
+                      <select id="gender">
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label>Salary Expectation</label>
+                      <input type="text"/>
+                    </div>
+                  </div>
+                  <button onclick="referralSubmission()">1+ Karma</button>
+                </div>
+               
+                
+
+        
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
